@@ -84,26 +84,26 @@ body {
     }
 }
 .main{
-    
+    position: relative;
     /* background-color: rgb(230, 144, 69); */
-    height:90vh;
+    height:60vh;
     text-align: center;
    display: flex;
-   justify-content: flex-start;
+   justify-content: center;
+   align-items: center;
    width: 100%;
+   overflow: hidden;
  
-   flex-wrap:nowrap;
 }
 .main .content{
     height: 100%;
-    width: 50%;
+    width: 850px;
     display: flex;
     flex-direction: column;
-    
-    gap: 4rem;
-    padding-top:4rem;
+    padding-top:10rem;
     justify-content: flex-start;
 align-items: center;
+position: relative;
 
 }
 .content h1{
@@ -113,43 +113,98 @@ align-items: center;
     font-family: "Roboto Slab", serif;
 
 }
-.content p{
-  
-    color: black;
-    font-size: 1.2rem;
-    font-weight: 300;
-}
-.main .button{
-    position: relative;
-    width: 25%;
-    height: 100%;
-}
-.main .button a .UserRegister{
+.content2{
+    display: none;
+    width: fit-content;
+    height: fit-content;
     position: absolute;
-    bottom: 15%;
+    margin-top: 40px;
+}
+
+.content p{
+  margin-top: 65px;
+  margin-right: 5px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: inline-block;
+}
+.content p span{
+    padding-left: 5px;
+    color:red;
+    font-family: "Roboto Slab", serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    width: 100%;
+    height: 50vh;
+    padding: 0 2rem ;
+    gap:1rem;
+}
+.button{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    flex-direction: column;
+    
+}
+.button p{
+    text-align: justify;
+    font-size: 1rem;
+    font-family:"Protest Strike", sans-serif ;
+    color: black;
+
+}
+.button a .UserRegister{
+    display: none;
+    position: absolute;
+    top:45%;
     left:15%;
+    color: #003c79;
     font-size: 2rem;
     padding: 5px;
     font-weight: 400;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
-  border: 3px solid black;
-  background-color: antiquewhite;
+  border: 1px solid rgb(5, 5, 5);
+  background-color: #ff9900;
 
    
 }
-.main .button a .retailerRegister{
+.UserRegister:hover{
+    box-shadow: 2px 4px 5px 2px rgb(24, 22, 22);
+
+}
+.retailerRegister:hover{
+    box-shadow: 2px 4px 5px 2px rgb(24, 22, 22);
+}
+
+ .button a .retailerRegister{
+    display: none;
    position: absolute;
-    bottom: 15%;
+    top:45%;
     right:15%;
+    color: rgb(255, 18, 18);
     font-size: 2rem;
     padding: 5px;
     font-weight: 400;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 5px;
-  border: 3px solid black;
-  background-color: antiquewhite;
+    border: 1px solid rgb(5, 5, 5);
+    background-color: #ff9900;
 
+}
+.Bounce{
+    animation: fallBounce 3s ease forwards;
 }
 .about{
     color:white;
@@ -160,8 +215,8 @@ align-items: center;
     padding: 10px 1rem;
     text-align: justify;
     margin-bottom: 10px;
-    height: 35vh;
-    
+    overflow: hidden;
+    width: 100%;
 
 }
 .about h1{
@@ -170,7 +225,23 @@ align-items: center;
 font-family: "Roboto Slab", serif;
     font-weight: 500;
     margin-bottom: 2rem;
+    color: seagreen;
 
+}
+.about .boxContainer{
+    
+    padding:1rem;
+    display: flex;
+    width: fit-content;
+    gap: 5px;
+    flex-wrap: nowrap;
+}
+.about .boxContainer .box{
+    margin-top: 1rem;
+    border-radius: 5%;
+width: 400px;
+height: 350px;
+background-color:seagreen;
 }
 footer {
     background-color: rgba(0, 0, 0, 0.8);
@@ -184,3 +255,76 @@ footer h1{
     font-weight: 800;
     margin: 1.5rem;
 }
+.imgdiv{
+    width: fit-content;
+    height: fit-content;
+    float: right;
+   display:"none"
+    
+}
+.imgdiv img{
+    width: 200px;
+    height: 150px;
+}
+
+
+
+ .animateIn {
+    
+    animation: leftBus 6s linear forwards;
+}
+
+.animateOut{
+    animation: rightBus 6s linear;
+}
+.animateIn:hover{
+    animation-play-state: paused;
+}
+.animateOut:hover{
+    animation-play-state: paused;
+}
+/*  i want to create an animation in which my image will come and it will stick to desired position */
+@keyframes leftBus {
+    
+
+0% {
+    transform: translateX(-100%); 
+}
+100% {
+    transform: translateX(55px);
+}
+} 
+@keyframes rightBus{
+    0%{
+        transform:translateX(55px);
+    }
+    100%{
+        transform:translateX(200%);
+    }
+}
+
+@keyframes fallBounce {
+    0% {
+      top: 0%;
+      transform: scale(1);
+    }
+    50% {
+      top: 80%; 
+      
+    }
+    75%{
+        top: 50%;
+    }
+
+    85%{
+        top: 80%;
+    }
+    90% {
+      top: 65%; 
+      transform: scale(1); 
+    }
+    100% {
+      top: 80%; 
+      transform: scale(1);
+    }
+  }
